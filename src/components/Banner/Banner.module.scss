@@ -7,6 +7,14 @@
         top right;
     position: relative;
 
+    @media screen and (max-width: 768px) {
+        background-image: url('@assets/images/grid-pattern.png'), url('@assets/images/spotlight-right.png');
+        background-repeat: no-repeat, no-repeat;
+        background-position:
+            top center,
+            top right;
+    }
+
     &Inner {
         min-height: 85vh;
         @include flex-center;
@@ -48,6 +56,10 @@
             top: 0px;
             -webkit-animation: 8.7s line-animation infinite;
             animation: 8.7s line-animation infinite;
+
+            @media screen and (max-width: 576px) {
+                left: 50px;
+            }
         }
 
         &-2 {
@@ -55,6 +67,10 @@
             top: 0px;
             -webkit-animation: 6.7s line-animation infinite ease-in 1s;
             animation: 6.7s line-animation infinite ease-in 1s;
+
+            @media screen and (max-width: 576px) {
+                left: 70px;
+            }
         }
 
         &-3 {
@@ -62,6 +78,10 @@
             top: 0px;
             -webkit-animation: 6.7s line-animation infinite ease-in 1.5s;
             animation: 6.7s line-animation infinite ease-in 1.5s;
+
+            @media screen and (max-width: 576px) {
+                right: 100px;
+            }
         }
 
         &-4 {
@@ -69,6 +89,10 @@
             top: 0px;
             -webkit-animation: 9s line-animation infinite;
             animation: 9s line-animation infinite;
+
+            @media screen and (max-width: 576px) {
+                right: 30px;
+            }
         }
     }
 }
