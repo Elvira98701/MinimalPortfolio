@@ -21,6 +21,7 @@ const Header = () => {
         damping: 6,
         stiffness: 50,
         restDelta: 0.001,
+        delay: 0.3,
       }}
     >
       <nav>

@@ -20,7 +20,7 @@ const ProjectCard = ({ title, description, image, icons = [], link }) => {
                 <li key={icon} className={styles.projectLogosItem}>
                   <span
                     className={`${styles[`icon-${index}`]}`}
-                    style={{ backgroundImage: `url(${icon})` }}
+                    style={{ backgroundImage: `url("${icon}")` }}
                   ></span>
                 </li>
               ))}
