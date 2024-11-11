@@ -1,3 +1,6 @@
+import { useEffect, useState } from "react";
+
+import Preloader from "@components/Preloader";
 import Banner from "@components/Banner";
 import Header from "@components/Header";
 import About from "@components/About";
@@ -12,20 +15,33 @@ import Footer from "@components/Footer";
 import "@styles/index.scss";
 
 const App = () => {
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 2000);
+  }, []);
+
   return (
     <div className="App">
-      <Header />
-      <Banner />
-      <About />
-      <Projects />
-      <Testimonials />
-      <Partners />
-      <Experince />
-      <div className="bottom">
-        <Approach />
-        <Contacts />
-        <Footer />
-      </div>
+      <Preloader isLoading={isLoading} />
+      {!isLoading && (
+        <>
+          <Header />
+          <Banner />
+          <About />
+          <Projects />
+          <Testimonials />
+          <Partners />
+          <Experince />
+          <div className="bottom">
+            <Approach />
+            <Contacts />
+            <Footer />
+          </div>
+        </>
+      )}
     </div>
   );
 };
