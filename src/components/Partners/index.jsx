@@ -42,7 +42,12 @@ const Partners = () => {
       >
         {partnersList.map(({ id, img }) => (
           <motion.div key={id} variants={itemVariants}>
-            <img className={styles.partnersImage} src={img} alt="partner" />
+            <img
+              className={styles.partnersImage}
+              src={img}
+              alt="partner"
+              loading="lazy"
+            />
           </motion.div>
         ))}
       </motion.div>

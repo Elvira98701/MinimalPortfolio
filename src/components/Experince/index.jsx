@@ -61,7 +61,12 @@ const Experince = () => {
         <motion.div className={styles.experinceList}>
           {experinceList.map(({ id, title, description, image }) => (
             <motion.article className={styles.experinceCard} key={id}>
-              <img className={styles.experinceImage} src={image} alt={title} />
+              <img
+                className={styles.experinceImage}
+                src={image}
+                alt={title}
+                loading="lazy"
+              />
               <div>
                 <h3 className={styles.experinceSubtitle}>{title}</h3>
                 <p className={styles.experinceDescription}>{description}</p>

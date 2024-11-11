@@ -10,6 +10,7 @@ const ProjectCard = ({ title, description, image, icons = [], link }) => {
           alt={title}
           width={553}
           height={330}
+          loading="lazy"
         />
         <div className={styles.projectContent}>
           <h3 className={styles.projectSubtitle}>{title}</h3>
