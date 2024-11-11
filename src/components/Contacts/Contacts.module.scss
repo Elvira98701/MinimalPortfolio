@@ -1,0 +1,21 @@
+.contacts {
+    padding-block: var(--section-block);
+
+    &Inner {
+        @include flex-center;
+    }
+
+    &Body {
+        text-align: center;
+        padding-block: clamp(2.5rem, 1.75rem + 3.75vw, 6.25rem);
+        max-width: 720px;
+    }
+
+    &Accent {
+        color: var(--color-accent);
+    }
+
+    &Description {
+        padding-block: 30px;
+    }
+}

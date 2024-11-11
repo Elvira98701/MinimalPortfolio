@@ -1,0 +1,126 @@
+.project {
+    position: relative;
+
+    @media screen and (max-width: 768px) {
+        width: 384px;
+    }
+
+    @media screen and (max-width: 450px) {
+        width: 100%;
+    }
+
+    @media (hover:hover) {
+        &:hover {
+
+            .projectInner {
+                transform: perspective(1000px) translate3d(0, 0, -100px) scale(0.9) rotateX(30deg);
+            }
+
+            .projectLinkSmall {
+                opacity: 1;
+            }
+        }
+    }
+
+    &Inner {
+        background-color: var(--color-dark);
+        border-radius: var(--border-radius);
+        box-shadow: var(--color-grey) 0px 1px 2px, var(--color-grey) 0px 1px 3px;
+        height: clamp(24.875rem, 22.125rem + 13.75vw, 38.625rem);
+        padding: clamp(1.25rem, 1.05rem + 1vw, 2.25rem) clamp(0.875rem, 0.75rem + 0.63vw, 1.5rem);
+        transition: 0.6s;
+        cursor: pointer;
+
+    }
+
+    &Image {
+        width: 100%;
+        height: auto;
+    }
+
+    &Content {
+        padding-top: clamp(1.25rem, 1.125rem + 0.63vw, 1.875rem);
+    }
+
+    &Subtitle {
+        margin-bottom: 14px;
+    }
+
+    &Description {
+        margin-bottom: clamp(0.875rem, 0.8rem + 0.38vw, 1.25rem);
+
+        @media screen and (max-width: 992px) {
+            font-size: 14px;
+        }
+    }
+
+    &Bottom {
+        @include flex-between;
+    }
+
+    &Logos {
+        position: relative;
+        display: flex;
+
+        &Item {
+            --size: clamp(2.125rem, 1.925rem + 1vw, 3.125rem);
+
+            span {
+                @include square(var(--size));
+                display: inline-block;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: 20px;
+                border: 1px solid var(--color-grey);
+                background-color: #0E1128;
+                border-radius: 50%;
+            }
+
+            @for $i from 0 through 4 {
+                .icon-#{$i} {
+                    transform: translateX(calc(-10px * $i));
+                }
+            }
+        }
+    }
+
+    &Link {
+        color: var(--color-accent);
+        display: inline-flex;
+        align-items: center;
+        font-size: 20px;
+        -moz-column-gap: 10px;
+        column-gap: 10px;
+        font-weight: 500;
+
+        @media screen and (max-width: 992px) {
+            font-size: 14px;
+        }
+
+        &Small {
+            position: absolute;
+            top: 15%;
+            left: 50%;
+            background-color: #01040f;
+            border: 1px solid var(--color-grey);
+            padding: 4px 14px;
+            font-size: 14px;
+            font-weight: 500;
+            border-radius: 15px;
+            transform: translate(-50%, 0);
+            transition: 0.3s;
+            opacity: 0;
+
+            &::after {
+                content: '';
+                width: 1px;
+                height: 150px;
+                background: rgb(72, 220, 221);
+                background: linear-gradient(180deg, rgba(72, 220, 221, 1) 0%, rgba(44, 109, 193, 1) 79%);
+                position: absolute;
+                top: 100%;
+                left: 50%;
+            }
+        }
+    }
+}

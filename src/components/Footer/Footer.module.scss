@@ -1,0 +1,32 @@
+.footer {
+    padding-block: 50px;
+
+    &Inner {
+        @include flex-between;
+
+        @media screen and (max-width: 576px) {
+            flex-direction: column;
+            row-gap: 14px;
+        }
+    }
+
+    &List {
+        @include flex-center;
+        -moz-column-gap: 16px;
+        column-gap: 16px;
+    }
+
+
+    &Link {
+        @include square(40px);
+        @include flex-center;
+        border: 1px solid var(--color-grey);
+        border-radius: 8px;
+        background-color: #0E1128;
+
+        svg {
+            fill: var(--color-light);
+            @include square(24px);
+        }
+    }
+}

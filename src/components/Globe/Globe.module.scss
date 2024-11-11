@@ -1,0 +1,127 @@
+.globeContainer,
+.globe {
+    width: 200px;
+    height: 200px;
+}
+
+.globeContainer {
+    position: relative;
+    display: inline-block;
+    margin: 30px;
+    transform: scale(1.1);
+}
+
+.globe {
+    position: relative;
+    display: block;
+    margin: 0;
+    padding: 0;
+    top: 0;
+    left: 0;
+}
+
+.globeWorldmap,
+.globeWorldmapFront,
+.globeWorldmapBack,
+.globeSphere,
+.globeOuterShadow,
+.globeInnerShadow {
+    position: absolute;
+    display: block;
+    margin: 0;
+}
+
+.globeSphere,
+.globeOuterShadow,
+.globeInnerShadow {
+    left: 0;
+    top: 0;
+    width: 200px;
+    height: 200px;
+    background-position: 0 0;
+    background-repeat: no-repeat;
+}
+
+.globeWorldmap {
+    left: 0;
+    top: 0;
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+    border-radius: 50%;
+}
+
+.globeWorldmapFront,
+.globeWorldmapBack {
+    left: 0;
+    top: 0;
+    width: 1000px;
+    height: 200px;
+    overflow: visible;
+    background-image: url('@assets/icons/globe/worldmap.svg');
+    background-repeat: no-repeat;
+}
+
+.globeOuterShadow {
+    left: 0;
+    top: 186px;
+    width: 200px;
+    height: 30px;
+    background-image: url('@assets/icons/globe/outer_shadow.svg');
+}
+
+.globeInnerShadow {
+    background-image: url('@assets/icons/globe/inner_shadow.svg');
+}
+
+.globeWorldmapFront {
+    background-position: 0px 0px;
+    -webkit-animation: textureSpinreverse 10s linear infinite;
+    animation: textureSpinreverse 10s linear infinite;
+}
+
+.globeWorldmapBack {
+    background-position: 0px -220px;
+    -webkit-animation: textureSpin 10s linear infinite;
+    animation: textureSpin 10s linear infinite;
+}
+
+@-webkit-keyframes textureSpin {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-47.5%);
+    }
+}
+
+@keyframes textureSpin {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-47.5%);
+    }
+}
+
+@-webkit-keyframes textureSpinreverse {
+    from {
+        transform: translateX(-47.5%);
+    }
+
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes textureSpinreverse {
+    from {
+        transform: translateX(-47.5%);
+    }
+
+    to {
+        transform: translateX(0);
+    }
+}

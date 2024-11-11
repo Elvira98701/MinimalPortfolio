@@ -1,0 +1,13 @@
+.partners {
+    padding-block: clamp(2.25rem, 1.825rem + 2.13vw, 4.375rem);
+
+    &Inner {
+        @include flex-center;
+        gap: clamp(1.125rem, 0.475rem + 3.25vw, 4.375rem);
+        flex-wrap: wrap;
+    }
+
+    &Image {
+        width: clamp(8.125rem, 7.375rem + 3.75vw, 11.875rem);
+    }
+}

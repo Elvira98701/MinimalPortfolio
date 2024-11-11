@@ -1,0 +1,16 @@
+:root {
+    --color-dark: #000319;
+    --color-accent: #CBACF9;
+    --color-accent-light: #C1C2D3;
+    --color-light: #FFFFFF;
+    --color-grey: #26293C;
+
+    --container-padding-x: 20px;
+    --container-width: 1240px;
+    --border-radius: 23px;
+    --section-block: clamp(3.125rem, 2.5rem + 3.13vw, 6.25rem);
+
+    --header-height: clamp(3.438rem, 3.3rem + 0.69vw, 4.125rem);
+
+    --font-family-base: "Inter", sans-serif;
+}
