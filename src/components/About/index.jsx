@@ -1,5 +1,5 @@
-import { motion } from "framer-motion";
-import { useRef } from "react";
+import { AnimatePresence, motion } from "framer-motion";
+import { useEffect, useRef, useState } from "react";
 import useScrollAnimation from "@hooks/useScrollAnimation";
 
 import Button from "@components/Button";
@@ -39,6 +39,28 @@ const aboutList = [
 const About = () => {
   const targetRef = useRef(null);
   const [scale, opacity] = useScrollAnimation(targetRef);
+  const [isOpenNotification, setIsOpenNotification] = useState(false);
+
+  const handleCopyToClipboard = async (text) => {
+    try {
+      await navigator.clipboard.writeText(text);
+      console.log("copy");
+    } catch (error) {
+      console.warn(error.message);
+    }
+  };
+
+  useEffect(() => {
+    let timerId;
+
+    if (isOpenNotification) {
+      timerId = setTimeout(() => {
+        setIsOpenNotification(false);
+      }, 1500);
+    }
+
+    return () => clearTimeout(timerId);
+  }, [isOpenNotification]);
 
   return (
     <section className={styles.about} id="about">
@@ -61,7 +83,13 @@ const About = () => {
               </div>
             )}
             {obj.id === 5 && (
-              <Button small={true}>
+              <Button
+                small={true}
+                onClick={() => {
+                  handleCopyToClipboard("fakeemail@mail.ru");
+                  setIsOpenNotification(true);
+                }}
+              >
                 <svg
                   width="12"
                   height="12"
@@ -88,6 +116,32 @@ const About = () => {
           </motion.div>
         ))}
       </motion.div>
+      <AnimatePresence initial={false}>
+        {isOpenNotification && (
+          <motion.div
+            className={styles.aboutNotification}
+            initial={{
+              y: 100,
+              opacity: 0,
+            }}
+            animate={{
+              y: 0,
+              opacity: 1,
+            }}
+            exit={{
+              y: 100,
+              opacity: 0,
+            }}
+            transition={{
+              type: "spring",
+              bounce: 0.4,
+              duration: 0.7,
+            }}
+          >
+            Email is Copied!
+          </motion.div>
+        )}
+      </AnimatePresence>
     </section>
   );
 };

@@ -21,7 +21,7 @@ const Banner = () => {
               damping: 6,
               stiffness: 50,
               restDelta: 0.001,
-              delay: 0.4,
+              delay: 0.5,
             }}
           >
             Transforming Concepts into Seamless{" "}
