@@ -25,55 +25,33 @@
     }
 
     &Card {
-     @include flex-center;
-     -moz-column-gap: clamp(1.25rem, 1.125rem + 0.63vw, 1.875rem);
-     column-gap: clamp(1.25rem, 1.125rem + 0.63vw, 1.875rem);
-     padding: clamp(1.25rem, 1.063rem + 0.94vw, 2.188rem);
-     border-radius: var(--border-radius);
-     border: 1px solid var(--color-grey);
-     height: 190px;
-     position: relative;
-     overflow: hidden;
+        @include flex-center;
+        -moz-column-gap: clamp(1.25rem, 1.125rem + 0.63vw, 1.875rem);
+        column-gap: clamp(1.25rem, 1.125rem + 0.63vw, 1.875rem);
+        padding: clamp(1.25rem, 1.063rem + 0.94vw, 2.188rem);
+        border-radius: var(--border-radius);
+        border: 1px solid var(--color-grey);
+        height: 190px;
+        position: relative;
+        overflow: hidden;
 
-     &::after {
-         --size: 100px;
+        &::before {
+            content: '';
+            background-color: rgb(14 17 40 / 0.5);
+            -webkit-backdrop-filter: blur(15px);
+            backdrop-filter: blur(15px);
+            position: absolute;
+            inset: 1px;
+            border-radius: inherit;
+            z-index: 1;
+        }
 
-         content: '';
-         background-color: var(--color-accent);
-         @include square(var(--size));
-         border-radius: 50%;
-         position: absolute;
-         top: calc(var(--size) / 2 - var(--size));
-         left: calc(var(--size) / 2 - var(--size));
-         z-index: -1;
-         -webkit-animation: animation-circle 30s infinite;
-         animation: animation-circle 30s infinite;
-     }
-
-     @for $i from 2 through 4 {
-         &:nth-child(#{$i})::after {
-             -webkit-animation-delay: calc(2.5s * $i);
-             animation-delay: calc(2.5s * $i);
-         }
-     }
-
-     &::before {
-         content: '';
-         background-color: rgb(14 17 40 / 0.5);
-         -webkit-backdrop-filter: blur(15px);
-         backdrop-filter: blur(15px);
-         position: absolute;
-         inset: 1px;
-         border-radius: inherit;
-         z-index: 1;
-     }
-
-     @media screen and (max-width: 576px) {
-         flex-direction: column;
-         row-gap: 20px;
-         height: 224px;
-     }
- }
+        @media screen and (max-width: 576px) {
+            flex-direction: column;
+            row-gap: 20px;
+            height: 224px;
+        }
+    }
 
     &Image {
         width: clamp(3.75rem, 3rem + 3.75vw, 7.5rem);
@@ -99,48 +77,16 @@
             margin-top: 5px;
         }
     }
-}
 
-@-webkit-keyframes animation-circle {
-    0% {
-        transform: translate(0, 0);
-    }
+    &Circle {
+        --size: 100px;
 
-    25% {
-        transform: translate(600%, 0);
-    }
-
-    50% {
-        transform: translate(600%, 200%);
-    }
-
-    75% {
-        transform: translate(0, 200%);
-    }
-
-    100% {
-        transform: translate(0, 0);
-    }
-}
-
-@keyframes animation-circle {
-    0% {
-        transform: translate(0, 0);
-    }
-
-    25% {
-        transform: translate(600%, 0);
-    }
-
-    50% {
-        transform: translate(600%, 200%);
-    }
-
-    75% {
-        transform: translate(0, 200%);
-    }
-
-    100% {
-        transform: translate(0, 0);
+        background-color: var(--color-accent);
+        @include square(var(--size));
+        border-radius: 50%;
+        position: absolute;
+        top: calc(var(--size) / 2 - var(--size));
+        left: calc(var(--size) / 2 - var(--size));
+        z-index: -1;
     }
 }
