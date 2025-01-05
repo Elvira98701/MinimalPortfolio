@@ -1,44 +1,12 @@
 import { AnimatePresence, motion } from "framer-motion";
-import { useEffect, useRef, useState } from "react";
-import useScrollAnimation from "@hooks/useScrollAnimation";
-
+import { useEffect, useState } from "react";
 import Button from "@components/Button";
 import Globe from "@components/Globe";
+import { aboutList } from "./data";
 
 import styles from "./About.module.scss";
 
-const aboutList = [
-  {
-    id: 1,
-    title: "I prioritize client collaboration, fostering open communication ",
-  },
-  {
-    id: 2,
-    title: "I’m very flexible with time zone communications",
-  },
-  {
-    id: 3,
-    title: "My tech stack",
-    slogun: "I constantly try to improve",
-  },
-  {
-    id: 4,
-    title: "Tech enthusiast with a passion for development.",
-  },
-  {
-    id: 5,
-    title: "Do you want to start a project together?",
-  },
-  {
-    id: 6,
-    title: "Currently building a JS Animation library",
-    slogun: "The Inside Scoop",
-  },
-];
-
 const About = () => {
-  const targetRef = useRef(null);
-  const [scale, opacity] = useScrollAnimation(targetRef);
   const [isOpenNotification, setIsOpenNotification] = useState(false);
 
   const handleCopyToClipboard = async (text) => {
@@ -64,16 +32,15 @@ const About = () => {
 
   return (
     <section className={styles.about} id="about">
-      <motion.div
-        className={`${styles.aboutList} container`}
-        ref={targetRef}
-        style={{ scale, position: "relative" }}
-      >
+      <motion.div className={`${styles.aboutList} container`}>
         {aboutList.map((obj) => (
           <motion.div
             className={`${styles.aboutItem} ${styles[`aboutItem-${obj.id}`]}`}
             key={obj.id}
-            style={{ opacity }}
+            initial={{ y: 50, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
           >
             {obj.slogun && <p>{obj.slogun}</p>}
             <h3>{obj.title}</h3>

@@ -1,8 +1,16 @@
+import { motion } from "framer-motion";
+
 import styles from "./ProjectCard.module.scss";
 
 const ProjectCard = ({ title, description, image, icons = [], link }) => {
   return (
-    <article className={styles.project}>
+    <motion.article
+      className={styles.project}
+      initial={{ y: 50, opacity: 0 }}
+      whileInView={{ y: 0, opacity: 1 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.5 }}
+    >
       <div className={styles.projectInner}>
         <img
           className={styles.projectImage}
@@ -47,7 +55,7 @@ const ProjectCard = ({ title, description, image, icons = [], link }) => {
       <a className={styles.projectLinkSmall} href="#">
         Visit
       </a>
-    </article>
+    </motion.article>
   );
 };
 
