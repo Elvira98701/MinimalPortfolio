@@ -7,7 +7,6 @@ import Project from "@pages/Project";
 import Preloader from "@components/Preloader";
 import Header from "@components/Header";
 import Modal from "@components/Modal";
-import Approach from "@components/Approach";
 import Contacts from "@components/Contacts";
 import Footer from "@components/Footer";
 import { ModalProvider } from "@components/Modal/ModalProvider";
@@ -34,11 +33,8 @@ const App = () => {
             <Route index element={<Home />} />
             <Route path="/project/:id" element={<Project />} />
           </Routes>
-          <div className="bottom">
-            <Approach />
-            <Contacts />
-            <Footer />
-          </div>
+          <Contacts />
+          <Footer />
           <Modal />
         </ModalProvider>
       )}

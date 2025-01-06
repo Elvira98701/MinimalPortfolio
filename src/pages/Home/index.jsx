@@ -1,4 +1,5 @@
 import About from "@components/About";
+import Approach from "@components/Approach";
 import Banner from "@components/Banner";
 import Experince from "@components/Experince";
 import Partners from "@components/Partners";
@@ -14,6 +15,7 @@ const Home = () => {
       <Testimonials />
       <Partners />
       <Experince />
+      <Approach />
     </>
   );
 };

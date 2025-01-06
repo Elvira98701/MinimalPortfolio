@@ -63,16 +63,13 @@ h3 {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-}
-
-.popup-opened {
-  overflow: hidden;
-}
-
-.bottom {
   background: url("@assets/images/bg.png") center bottom / 100% no-repeat;
 
   @media screen and (max-width: 992px) {
     background: url("@assets/images/bg.png") center bottom / 1000px no-repeat;
   }
+}
+
+.popup-opened {
+  overflow: hidden;
 }

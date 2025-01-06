@@ -3,6 +3,7 @@ import { useParams } from "react-router";
 import { projectsList } from "@components/Projects/data";
 
 import styles from "./Project.module.scss";
+import Approach from "@components/Approach";
 
 const Project = () => {
   const { id } = useParams();
@@ -76,6 +77,7 @@ const Project = () => {
           </div>
         </div>
       </section>
+      <Approach />
     </main>
   );
 };
