@@ -1,214 +1,219 @@
 .about {
+  &List {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(4, 1fr) 1.5fr 2fr;
+    gap: 30px;
+    min-height: 940px;
+    padding-bottom: clamp(1rem, 0.575rem + 2.13vw, 3.125rem);
 
-    &List {
-        display: grid;
-        grid-template-columns: repeat(5, 1fr);
-        grid-template-rows: repeat(4, 1fr) 1.5fr 2fr;
-        gap: 30px;
-        min-height: 940px;
-        padding-bottom: clamp(1rem, 0.575rem + 2.13vw, 3.125rem);
+    @media screen and (max-width: 992px) {
+      gap: 24px;
+    }
 
-        @media screen and (max-width: 992px) {
-            gap: 24px;
-        }
+    @media screen and (max-width: 768px) {
+      grid-template-columns: 1fr;
+      grid-template-rows: 2fr repeat(5, 1fr);
+    }
+  }
+
+  &Item {
+    background-color: var(--color-dark);
+    border-radius: var(--border-radius);
+    box-shadow: var(--color-grey) 0px 1px 2px, var(--color-grey) 0px 1px 3px;
+
+    &-1 {
+      grid-column: 1 / 4;
+      grid-row: 1 / 5;
+      padding: 60px 40px;
+      display: flex;
+      align-items: flex-end;
+      background-image: linear-gradient(
+          to bottom,
+          rgb(0 0 0 / 0.2),
+          var(--color-dark)
+        ),
+        url("@assets/images/portfolio/pc.jpg");
+      background-position: center, center top;
+      background-size: cover, cover;
+      background-repeat: no-repeat, no-repeat;
+
+      h3 {
+        width: 60%;
+      }
+
+      @media screen and (max-width: 768px) {
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+        padding: 21px;
+      }
+    }
+
+    &-2 {
+      grid-column: 4 / 6;
+      grid-row: 1 / 3;
+      padding: 40px 35px;
+      position: relative;
+      overflow: hidden;
+
+      h3 {
+        font-size: clamp(1.25rem, 1.125rem + 0.63vw, 1.875rem);
+        position: relative;
+        z-index: 1;
+      }
+
+      @media screen and (max-width: 768px) {
+        grid-column: 1 / 2;
+        grid-row: 2 / 3;
+        padding: 21px;
+      }
+    }
+
+    &-3 {
+      grid-column: 4 / 6;
+      grid-row: 3 / 5;
+      padding: 21px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background-image: url("@assets/images/portfolio/stack.png");
+      background-position: right 19px center;
+      background-repeat: no-repeat;
+      background-size: 60%;
+
+      p {
+        line-height: 1;
+        margin-bottom: 10px;
+        color: var(--color-accent-light);
+        font-size: 14px;
+      }
+
+      @media screen and (max-width: 768px) {
+        grid-column: 1 / 2;
+        grid-row: 3 / 4;
+      }
+    }
+
+    &-4 {
+      grid-column: 1 / 3;
+      grid-row: 5 / 6;
+      padding: 28px;
+      background-image: url("@assets/images/portfolio/bg.png"),
+        url("@assets/images/portfolio/input.png");
+      background-repeat: no-repeat, no-repeat;
+      background-position: center, right bottom;
+      background-size: cover, 200px;
+
+      h3 {
+        font-size: clamp(1.25rem, 1.2rem + 0.25vw, 1.5rem);
+      }
+
+      @media screen and (max-width: 768px) {
+        grid-column: 1 / 2;
+        grid-row: 4 / 5;
+        padding: 21px;
+      }
+    }
+
+    &-5 {
+      grid-column: 1 / 3;
+      grid-row: 6 / 7;
+      @include flex-center;
+      flex-direction: column;
+      row-gap: 12px;
+      padding: 20px 55px;
+      text-align: center;
+      background-image: linear-gradient(to right, #2e1b74, var(--color-dark));
+      background-size: 300% 100%;
+      z-index: 0;
+      -webkit-animation: animateBg 5s linear infinite alternate;
+      animation: animateBg 5s linear infinite alternate;
+
+      h3 {
+        font-size: clamp(1.25rem, 1.2rem + 0.25vw, 1.5rem);
+      }
+
+      @media screen and (max-width: 768px) {
+        grid-column: 1 / 2;
+        grid-row: 5 / 6;
+      }
+    }
+
+    &-6 {
+      grid-column: 3 / 6;
+      grid-row: 5 / 7;
+      padding-inline: 43px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background-image: url("@assets/images/portfolio/bg.png"),
+        url("@assets/images/portfolio/code.png");
+      background-repeat: no-repeat, no-repeat;
+      background-position: center center, right;
+      background-size: cover, 50%;
+
+      p {
+        line-height: 1;
+        margin-bottom: 10px;
+        color: var(--color-accent-light);
+        text-transform: uppercase;
+      }
+
+      h3 {
+        width: 50%;
 
         @media screen and (max-width: 768px) {
-            grid-template-columns: 1fr;
-            grid-template-rows: 2fr repeat(5, 1fr);
+          width: 70%;
         }
+      }
 
+      @media screen and (max-width: 768px) {
+        grid-column: 1 / 2;
+        grid-row: 6 / 7;
+        padding-inline: 21px;
+        background-size: cover, 200px;
+      }
     }
+  }
 
+  &Globe {
+    position: absolute;
+    left: 50%;
+    top: 20%;
+    z-index: 0;
+    transform: translateX(-50%);
+  }
 
-    &Item {
-        background-color: var(--color-dark);
-        border-radius: var(--border-radius);
-        box-shadow: var(--color-grey) 0px 1px 2px, var(--color-grey) 0px 1px 3px;
-
-        &-1 {
-            grid-column: 1 / 4;
-            grid-row: 1 / 5;
-            padding: 60px 40px;
-            display: flex;
-            align-items: flex-end;
-            background-image: linear-gradient(to bottom, rgb(0 0 0 / 0.2), var(--color-dark)), url('@assets/images/portfolio/pc.jpg');
-            background-position: center, center top;
-            background-size: cover, cover;
-            background-repeat: no-repeat, no-repeat;
-
-            h3 {
-                width: 60%;
-            }
-
-            @media screen and (max-width: 768px) {
-                grid-column: 1 / 2;
-                grid-row: 1 / 2;
-                padding: 21px;
-            }
-        }
-
-        &-2 {
-            grid-column: 4 / 6;
-            grid-row: 1 / 3;
-            padding: 40px 35px;
-            position: relative;
-            overflow: hidden;
-
-            h3 {
-                font-size: clamp(1.25rem, 1.125rem + 0.63vw, 1.875rem);
-                position: relative;
-                z-index: 1;
-            }
-
-            @media screen and (max-width: 768px) {
-                grid-column: 1 / 2;
-                grid-row: 2 / 3;
-                padding: 21px;
-            }
-        }
-
-        &-3 {
-            grid-column: 4 / 6;
-            grid-row: 3 / 5;
-            padding: 21px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            background-image: url('@assets/images/portfolio/stack.png');
-            background-position: right 19px center;
-            background-repeat: no-repeat;
-            background-size: 60%;
-
-            p {
-                line-height: 1;
-                margin-bottom: 10px;
-                color: var(--color-accent-light);
-                font-size: 14px;
-            }
-
-            @media screen and (max-width: 768px) {
-                grid-column: 1 / 2;
-                grid-row: 3 / 4;
-            }
-        }
-
-        &-4 {
-            grid-column: 1 / 3;
-            grid-row: 5 / 6;
-            padding: 28px;
-            background-image: url('@assets/images/portfolio/bg.png'), url('@assets/images/portfolio/input.png');
-            background-repeat: no-repeat, no-repeat;
-            background-position: center, right bottom;
-            background-size: cover, 200px;
-
-            h3 {
-                font-size: clamp(1.25rem, 1.2rem + 0.25vw, 1.5rem);
-            }
-
-            @media screen and (max-width: 768px) {
-                grid-column: 1 / 2;
-                grid-row: 4 / 5;
-                padding: 21px;
-            }
-        }
-
-        &-5 {
-            grid-column: 1 / 3;
-            grid-row: 6 / 7;
-            @include flex-center;
-            flex-direction: column;
-            row-gap: 12px;
-            padding: 20px 55px;
-            text-align: center;
-            background-image: linear-gradient(to right, #2E1B74, var(--color-dark));
-            background-size: 300% 100%;
-            -webkit-animation: animateBg 5s linear infinite alternate;
-            animation: animateBg 5s linear infinite alternate;
-
-            h3 {
-                font-size: clamp(1.25rem, 1.2rem + 0.25vw, 1.5rem);
-            }
-
-            @media screen and (max-width: 768px) {
-                grid-column: 1 / 2;
-                grid-row: 5 / 6;
-            }
-        }
-
-        &-6 {
-            grid-column: 3 / 6;
-            grid-row: 5 / 7;
-            padding-inline: 43px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            background-image: url('@assets/images/portfolio/bg.png'), url('@assets/images/portfolio/code.png');
-            background-repeat: no-repeat, no-repeat;
-            background-position: center center, right;
-            background-size: cover, 50%;
-
-            p {
-                line-height: 1;
-                margin-bottom: 10px;
-                color: var(--color-accent-light);
-                text-transform: uppercase;
-            }
-
-            h3 {
-                width: 50%;
-
-                @media screen and (max-width: 768px) {
-                    width: 70%;
-                }
-            }
-
-            @media screen and (max-width: 768px) {
-                grid-column: 1 / 2;
-                grid-row: 6 / 7;
-                padding-inline: 21px;
-                background-size: cover, 200px;
-            }
-        }
-    }
-
-    &Globe {
-        position: absolute;
-        left: 50%;
-        top: 20%;
-        z-index: 0;
-        transform: translateX(-50%);
-    }
-
-    &Notification {
-        position: fixed;
-        bottom: 50px;
-        right: 50px;
-        background-color: var(--color-accent);
-        color: var(--color-dark);
-        border-radius: 10px;
-        width: 200px;
-        height: 60px;
-        @include flex-center;
-        z-index: 100;
-    }
+  &Notification {
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+    background-color: var(--color-accent);
+    color: var(--color-dark);
+    border-radius: 10px;
+    width: 200px;
+    height: 60px;
+    @include flex-center;
+    z-index: 100;
+  }
 }
 
 @-webkit-keyframes animateBg {
-    0% {
-        background-position: 0% 0%;
-    }
+  0% {
+    background-position: 0% 0%;
+  }
 
-    100% {
-        background-position: 100% 0%;
-    }
+  100% {
+    background-position: 100% 0%;
+  }
 }
 
 @keyframes animateBg {
-    0% {
-        background-position: 0% 0%;
-    }
+  0% {
+    background-position: 0% 0%;
+  }
 
-    100% {
-        background-position: 100% 0%;
-    }
+  100% {
+    background-position: 100% 0%;
+  }
 }
