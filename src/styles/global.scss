@@ -1,78 +1,78 @@
-@use "@styles/mixins"as *;
+@use "@styles/mixins" as *;
 
 html,
 body {
-    width: 100%;
-    overflow-x: hidden;
-    scrollbar-width: thin;
-    scrollbar-color: var(--color-accent) var(--color-grey);
+  width: 100%;
+  overflow-x: hidden;
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-accent) var(--color-grey);
 }
 
 html {
-    height: 100%;
+  height: 100%;
 }
 
 body {
-    min-height: 100%;
-    font-size: 16px;
-    font-family: var(--font-family-base);
-    color: var(--color-light);
-    font-weight: 400;
-    background-color: var(--color-dark)
+  min-height: 100%;
+  font-size: 16px;
+  font-family: var(--font-family-base);
+  color: var(--color-light);
+  font-weight: 400;
+  background-color: var(--color-dark);
 }
 
 button {
-    @include reset-button;
+  @include reset-button;
 }
 
 a {
-    text-decoration: none;
-    color: currentColor;
+  text-decoration: none;
+  color: currentColor;
 }
 
 p {
-    line-height: 1.5;
+  line-height: 1.5;
 }
 
 h1 {
-    font-size: clamp(3rem, 2.7rem + 1.5vw, 4.5rem);
-    text-transform: capitalize;
-    line-height: 1;
+  font-size: clamp(3rem, 2.7rem + 1.5vw, 4.5rem);
+  text-transform: capitalize;
+  line-height: 1;
 }
 
 h2 {
-    font-size: clamp(2.25rem, 2.1rem + 0.75vw, 3rem);
-    line-height: 1;
+  font-size: clamp(2.25rem, 2.1rem + 0.75vw, 3rem);
+  line-height: 1;
 }
 
 h3 {
-    font-size: clamp(1.125rem, 0.95rem + 0.88vw, 2rem);
-    line-height: 1.2;
+  font-size: clamp(1.125rem, 0.95rem + 0.88vw, 2rem);
+  line-height: 1.2;
 }
 
 .container {
-    max-width: calc(var(--container-width) + var(--container-padding-x) * 2);
-    padding-inline: var(--container-padding-x);
-    margin-inline: auto;
+  max-width: calc(var(--container-width) + var(--container-padding-x) * 2);
+  padding-inline: var(--container-padding-x);
+  margin-inline: auto;
 }
 
 .App {
-    height: 100%;
-    width: 100vw;
-    overflow-x: hidden;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+  height: 100%;
+  width: 100vw;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .popup-opened {
-    overflow: hidden;
+  overflow: hidden;
 }
 
 .bottom {
-    background: url('@assets/images/bg.png') center bottom / 100% no-repeat;
+  background: url("@assets/images/bg.png") center bottom / 100% no-repeat;
 
-    @media screen and (max-width: 992px) {
-        background: url('@assets/images/bg.png') center bottom / 1000px no-repeat;
-    }
+  @media screen and (max-width: 992px) {
+    background: url("@assets/images/bg.png") center bottom / 1000px no-repeat;
+  }
 }

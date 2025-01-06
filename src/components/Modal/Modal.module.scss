@@ -1,0 +1,29 @@
+.modal {
+  position: fixed;
+  inset: 0;
+  background-color: rgb(14 17 40 / 0.8);
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
+  z-index: 100;
+  @include flex-center;
+
+  &Body {
+    background-color: var(--color-dark);
+    border: 1px solid var(--color-grey);
+    border-radius: var(--border-radius);
+    padding: 20px;
+    min-width: 250px;
+    max-width: 400px;
+    width: 100%;
+    min-height: 300px;
+    margin-inline: 20px;
+    position: relative;
+  }
+
+  &Button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 10;
+  }
+}

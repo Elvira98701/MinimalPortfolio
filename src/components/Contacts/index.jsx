@@ -1,8 +1,11 @@
+import { useModal } from "@components/Modal/ModalContext";
 import Button from "@components/Button";
+import Form from "@components/Form";
 
 import styles from "./Contacts.module.scss";
 
 const Contacts = () => {
+  const { openModal } = useModal();
   return (
     <section className={styles.contacts} id="contact">
       <div className={`${styles.contactsInner} container`}>
@@ -15,7 +18,7 @@ const Contacts = () => {
             Reach out to me today and let&apos;s discuss how I can help you
             achieve your goals.
           </p>
-          <Button>
+          <Button onClick={() => openModal(<Form />)}>
             Contact me now
             <svg
               width="13"

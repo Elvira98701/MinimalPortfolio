@@ -1,9 +1,13 @@
 import { motion } from "framer-motion";
 import Button from "@components/Button";
+import { useModal } from "@components/Modal/ModalContext";
 
 import styles from "./Banner.module.scss";
+import Form from "@components/Form";
 
 const Banner = () => {
+  const { openModal } = useModal();
+
   return (
     <section className={styles.banner}>
       <div className={`${styles.bannerInner} container`}>
@@ -29,8 +33,8 @@ const Banner = () => {
           <p className={styles.bannerDescription}>
             Hi! I’m Adrian, a Next.js Developer based in Croatia.
           </p>
-          <Button>
-            See my work
+          <Button onClick={() => openModal(<Form />)}>
+            Contact me
             <svg
               width="13"
               height="14"

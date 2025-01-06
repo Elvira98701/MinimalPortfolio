@@ -20,7 +20,7 @@ export const projectsList = [
     description:
       "Explore the wonders of our solar system with this captivating 3D simulation of the planets using Three.js.",
     image: img1,
-    link: "",
+    link: "/project/1",
     icons: [react, tailwind, ts, threejs, logo3],
   },
   {
@@ -29,7 +29,7 @@ export const projectsList = [
     description:
       "Simplify your video conferencing experience with Yoom. Seamlessly connect with colleagues and friends.",
     image: img2,
-    link: "",
+    link: "/project/2",
     icons: [next, tailwind, ts, logo2, logo],
   },
   {
@@ -38,7 +38,7 @@ export const projectsList = [
     description:
       "A REAL Software-as-a-Service app with AI features and a payments and credits system using the latest tech stack.",
     image: img3,
-    link: "",
+    link: "/project/3",
     icons: [react, tailwind, ts, threejs, logo],
   },
   {
@@ -47,7 +47,7 @@ export const projectsList = [
     description:
       "Recreated the Apple iPhone 15 Pro website, combining GSAP animations and Three.js 3D effects.",
     image: img4,
-    link: "",
+    link: "/project/4",
     icons: [next, tailwind, ts, threejs, gsap],
   },
 ];

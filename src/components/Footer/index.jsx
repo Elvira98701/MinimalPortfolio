@@ -10,9 +10,14 @@ const Footer = () => {
           Copyright ©2024 Adrian Hajdin
         </small>
         <ul className={styles.footerList}>
-          {socialsList.map(({ id, image }) => (
+          {socialsList.map(({ id, image, title, link }) => (
             <li className={styles.footerItem} key={id}>
-              <a href="#" target="_blank" className={styles.footerLink}>
+              <a
+                href={link}
+                target="_blank"
+                className={styles.footerLink}
+                title={title}
+              >
                 {image}
               </a>
             </li>

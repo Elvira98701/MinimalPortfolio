@@ -2,8 +2,11 @@ import { motion } from "framer-motion";
 import { navList } from "./data";
 
 import styles from "./Header.module.scss";
+import { Link, useLocation } from "react-router";
 
 const Header = () => {
+  const { pathname } = useLocation();
+
   return (
     <motion.header
       className={styles.header}
@@ -21,14 +24,23 @@ const Header = () => {
     >
       <nav>
         <ul className={styles.headerList}>
-          {navList.map(({ id, name, link }) => (
-            <li className={styles.headerItem} key={id}>
-              <a className={styles.headerLink} href={link}>
-                <span className={styles.headerText}>{name}</span>
-                <span className={styles.headerText}>{name}</span>
-              </a>
+          {pathname === "/" ? (
+            navList.map(({ id, name, link }) => (
+              <li className={styles.headerItem} key={id}>
+                <a className={styles.headerLink} href={link}>
+                  <span className={styles.headerText}>{name}</span>
+                  <span className={styles.headerText}>{name}</span>
+                </a>
+              </li>
+            ))
+          ) : (
+            <li className={styles.headerItem}>
+              <Link to="/" className={styles.headerLink}>
+                <span className={styles.headerText}>Home</span>
+                <span className={styles.headerText}>Home</span>
+              </Link>
             </li>
-          ))}
+          )}
         </ul>
       </nav>
     </motion.header>

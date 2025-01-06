@@ -1,6 +1,8 @@
 export const socialsList = [
   {
     id: 1,
+    title: "Instagram",
+    link: "https://instagram.com/",
     image: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -15,6 +17,8 @@ export const socialsList = [
   },
   {
     id: 2,
+    title: "Twitter",
+    link: "http://twitter.com/",
     image: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -29,6 +33,8 @@ export const socialsList = [
   },
   {
     id: 3,
+    title: "GitHub",
+    link: "https://github.com/",
     image: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -43,6 +49,8 @@ export const socialsList = [
   },
   {
     id: 4,
+    title: "WhatsApp",
+    link: "https://www.whatsapp.com/",
     image: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -57,6 +65,8 @@ export const socialsList = [
   },
   {
     id: 5,
+    title: "LinkedIn",
+    link: "https://www.linkedin.com/",
     image: (
       <svg
         xmlns="http://www.w3.org/2000/svg"

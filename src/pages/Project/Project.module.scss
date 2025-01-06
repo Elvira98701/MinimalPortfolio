@@ -1,0 +1,36 @@
+.project {
+  // min-height: 100vh;
+  background-image: url("@assets/images/spotlight-left.png"),
+    url("@assets/images/grid-pattern.png"),
+    url("@assets/images/spotlight-right.png");
+  background-repeat: no-repeat, no-repeat, no-repeat;
+  background-position: top left, top center, top right;
+  padding-block: calc(var(--section-block) + var(--header-height))
+    var(--section-block);
+
+  @media screen and (max-width: 768px) {
+    background-image: url("@assets/images/grid-pattern.png"),
+      url("@assets/images/spotlight-right.png");
+    background-repeat: no-repeat, no-repeat;
+    background-position: top center, top right;
+  }
+
+  &Inner {
+    @include flex-center;
+    text-align: center;
+    flex-direction: column;
+    row-gap: 20px;
+  }
+
+  &Title {
+    max-width: 70%;
+
+    @media screen and (max-width: 768px) {
+      max-width: 100%;
+    }
+  }
+
+  &Image {
+    width: 100%;
+  }
+}

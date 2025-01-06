@@ -27,7 +27,7 @@ const Projects = () => {
         </motion.h2>
         <motion.div className={styles.projectsList}>
           {projectsList.map(
-            ({ id, title, description, image, icons, link }) => (
+            ({ id, title, description, image, icons, link }, index) => (
               <ProjectCard
                 key={id}
                 title={title}
@@ -35,6 +35,7 @@ const Projects = () => {
                 image={image}
                 icons={icons}
                 link={link}
+                index={index}
               />
             )
           )}

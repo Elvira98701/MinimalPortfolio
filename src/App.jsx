@@ -1,16 +1,16 @@
 import { useEffect, useState } from "react";
+import { Route, Routes } from "react-router";
+import ScrollToTop from "@utils/ScrollToTop";
 
+import Home from "@pages/Home";
+import Project from "@pages/Project";
 import Preloader from "@components/Preloader";
-import Banner from "@components/Banner";
 import Header from "@components/Header";
-import About from "@components/About";
-import Projects from "@components/Projects";
-import Testimonials from "@components/Testimonials";
-import Partners from "@components/Partners";
-import Experince from "@components/Experince";
+import Modal from "@components/Modal";
 import Approach from "@components/Approach";
 import Contacts from "@components/Contacts";
 import Footer from "@components/Footer";
+import { ModalProvider } from "@components/Modal/ModalProvider";
 
 import "@styles/index.scss";
 
@@ -27,20 +27,20 @@ const App = () => {
     <div className="App">
       <Preloader isLoading={isLoading} />
       {!isLoading && (
-        <>
+        <ModalProvider>
+          <ScrollToTop />
           <Header />
-          <Banner />
-          <About />
-          <Projects />
-          <Testimonials />
-          <Partners />
-          <Experince />
+          <Routes>
+            <Route index element={<Home />} />
+            <Route path="/project/:id" element={<Project />} />
+          </Routes>
           <div className="bottom">
             <Approach />
             <Contacts />
             <Footer />
           </div>
-        </>
+          <Modal />
+        </ModalProvider>
       )}
     </div>
   );

@@ -1,15 +1,23 @@
 import { motion } from "framer-motion";
 
 import styles from "./ProjectCard.module.scss";
+import { Link } from "react-router";
 
-const ProjectCard = ({ title, description, image, icons = [], link }) => {
+const ProjectCard = ({
+  title,
+  description,
+  image,
+  icons = [],
+  link,
+  index,
+}) => {
   return (
     <motion.article
       className={styles.project}
       initial={{ y: 50, opacity: 0 }}
       whileInView={{ y: 0, opacity: 1 }}
       viewport={{ once: true }}
-      transition={{ duration: 0.5 }}
+      transition={{ duration: 0.5, delay: 0.2 * index }}
     >
       <div className={styles.projectInner}>
         <img
@@ -34,8 +42,8 @@ const ProjectCard = ({ title, description, image, icons = [], link }) => {
                 </li>
               ))}
             </ul>
-            <a className={styles.projectLink} href={link} target="_blank">
-              Check Live Site
+            <Link className={styles.projectLink} to={link}>
+              Show more info
               <svg
                 width="13"
                 height="14"
@@ -48,13 +56,13 @@ const ProjectCard = ({ title, description, image, icons = [], link }) => {
                   fill="white"
                 />
               </svg>
-            </a>
+            </Link>
           </div>
         </div>
       </div>
-      <a className={styles.projectLinkSmall} href="#">
+      <Link className={styles.projectLinkSmall} to={link}>
         Visit
-      </a>
+      </Link>
     </motion.article>
   );
 };
