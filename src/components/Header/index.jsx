@@ -34,12 +34,34 @@ const Header = () => {
               </li>
             ))
           ) : (
-            <li className={styles.headerItem}>
-              <Link to="/" className={styles.headerLink}>
-                <span className={styles.headerText}>Home</span>
-                <span className={styles.headerText}>Home</span>
-              </Link>
-            </li>
+            <>
+              <li className={styles.headerItem}>
+                <Link to="/" className={styles.headerLink}>
+                  <span className={styles.headerText}>Home</span>
+                  <span className={styles.headerText}>Home</span>
+                </Link>
+              </li>
+              <li className={styles.headerItem}>
+                <a
+                  className={styles.headerLink}
+                  href="https://instagram.com/"
+                  target="_blank"
+                >
+                  <span className={styles.headerText}>Instagram</span>
+                  <span className={styles.headerText}>Instagram</span>
+                </a>
+              </li>
+              <li className={styles.headerItem}>
+                <a
+                  className={styles.headerLink}
+                  href="https://twitter.com/"
+                  target="_blank"
+                >
+                  <span className={styles.headerText}>Twitter</span>
+                  <span className={styles.headerText}>Twitter</span>
+                </a>
+              </li>
+            </>
           )}
         </ul>
       </nav>

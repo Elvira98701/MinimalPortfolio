@@ -38,7 +38,7 @@
   min-height: 30vh;
   position: relative;
   z-index: -1;
-  --size: 100px;
+  --size: clamp(3.125rem, 2.5rem + 3.13vw, 6.25rem);
 
   @media screen and (max-width: 992px) {
     min-height: 25vh;
