@@ -1,5 +1,4 @@
 .project {
-  // min-height: 100vh;
   background-image: url("@assets/images/spotlight-left.png"),
     url("@assets/images/grid-pattern.png"),
     url("@assets/images/spotlight-right.png");
@@ -32,5 +31,100 @@
 
   &Image {
     width: 100%;
+  }
+}
+
+.stack {
+  min-height: 30vh;
+  position: relative;
+  z-index: -1;
+  --size: 100px;
+
+  @media screen and (max-width: 992px) {
+    min-height: 25vh;
+  }
+
+  &Wrapper {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+
+    &:nth-child(2) {
+      top: clamp(3.125rem, 2.5rem + 3.13vw, 6.25rem);
+    }
+  }
+
+  &Big {
+    border: 2px solid var(--color-grey);
+    border-right: 2px solid var(--color-accent);
+    border-left: 2px solid var(--color-accent);
+    width: clamp(28.125rem, 21.25rem + 34.38vw, 62.5rem);
+    aspect-ratio: 1;
+    border-radius: 50%;
+    -webkit-animation: rotate-anim 35s infinite linear;
+    animation: rotate-anim 35s infinite linear;
+  }
+
+  &Small {
+    border: 2px solid var(--color-grey);
+    border-top: 2px solid var(--color-accent);
+    border-bottom: 2px solid var(--color-accent);
+    width: clamp(22.5rem, 17rem + 27.5vw, 50rem);
+    aspect-ratio: 1;
+    border-radius: 50%;
+    -webkit-animation: rotate-anim2 30s infinite linear;
+    animation: rotate-anim2 30s infinite linear;
+  }
+
+  span {
+    @include square(var(--size));
+    display: inline-block;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 20px;
+    border: 1px solid var(--color-grey);
+    background-color: #0e1128;
+    border-radius: 50%;
+    position: absolute;
+  }
+
+  .icon-0 {
+    top: calc(var(--size) / 2 * -1);
+    left: 50%;
+  }
+
+  .icon-1 {
+    top: 50%;
+    left: calc(var(--size) / 2 * -1);
+  }
+
+  .icon-2 {
+    top: 50%;
+    right: calc(var(--size) / 2 * -1);
+  }
+}
+
+@-webkit-keyframes rotate-anim {
+  to {
+    transform: rotate(1turn);
+  }
+}
+
+@keyframes rotate-anim {
+  to {
+    transform: rotate(1turn);
+  }
+}
+
+@-webkit-keyframes rotate-anim2 {
+  to {
+    transform: rotate(-1turn);
+  }
+}
+
+@keyframes rotate-anim2 {
+  to {
+    transform: rotate(-1turn);
   }
 }

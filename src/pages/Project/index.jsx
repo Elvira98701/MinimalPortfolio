@@ -50,6 +50,32 @@ const Project = () => {
           />
         </div>
       </section>
+      <section className={styles.stack}>
+        <div className={`${styles.stackInner} container`}>
+          <div className={styles.stackWrapper}>
+            <div className={styles.stackBig}>
+              {project.icons.slice(0, 3).map((icon, index) => (
+                <span
+                  key={icon}
+                  className={`${styles[`icon-${index}`]}`}
+                  style={{ backgroundImage: `url("${icon}")` }}
+                ></span>
+              ))}
+            </div>
+          </div>
+          <div className={styles.stackWrapper}>
+            <div className={styles.stackSmall}>
+              {project.icons.slice(3).map((icon, index) => (
+                <span
+                  key={icon}
+                  className={`${styles[`icon-${index}`]}`}
+                  style={{ backgroundImage: `url("${icon}")` }}
+                ></span>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
   );
 };
