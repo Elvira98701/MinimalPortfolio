@@ -1,4 +1,4 @@
-export const cards = [
+export const testimonialsList = [
   {
     name: "Michael Johnson",
     profession: "Director of AlphaStream Technologies",

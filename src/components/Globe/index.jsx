@@ -1,6 +1,6 @@
 import styles from "./Globe.module.scss";
 
-const Globe = () => {
+export const Globe = () => {
   return (
     <div className={styles.globeContainer}>
       <div className={styles.globe}>
@@ -15,5 +15,3 @@ const Globe = () => {
     </div>
   );
 };
-
-export default Globe;

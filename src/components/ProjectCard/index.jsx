@@ -1,9 +1,9 @@
 import { motion } from "framer-motion";
-
-import styles from "./ProjectCard.module.scss";
 import { Link } from "react-router";
 
-const ProjectCard = ({
+import styles from "./ProjectCard.module.scss";
+
+export const ProjectCard = ({
   title,
   description,
   image,
@@ -66,5 +66,3 @@ const ProjectCard = ({
     </motion.article>
   );
 };
-
-export default ProjectCard;

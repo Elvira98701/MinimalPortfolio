@@ -1,19 +1,14 @@
 import { useEffect, useState } from "react";
+
 import { Route, Routes } from "react-router";
-import ScrollToTop from "@utils/ScrollToTop";
 
-import Home from "@pages/Home";
-import Project from "@pages/Project";
-import Preloader from "@components/Preloader";
-import Header from "@components/Header";
-import Modal from "@components/Modal";
-import Contacts from "@components/Contacts";
-import Footer from "@components/Footer";
+import { Preloader, Header, Contacts, Footer, Modal } from "@components";
 import { ModalProvider } from "@components/Modal/ModalProvider";
-
+import { Home, Project } from "@pages";
+import { ScrollToTop } from "@utils";
 import "@styles/index.scss";
 
-const App = () => {
+export const App = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
@@ -41,5 +36,3 @@ const App = () => {
     </div>
   );
 };
-
-export default App;

@@ -1,6 +1,6 @@
 import styles from "./Form.module.scss";
 
-const Form = () => {
+export const Form = () => {
   return (
     <>
       <h3 className={styles.title}>Contact me</h3>
@@ -34,5 +34,3 @@ const Form = () => {
     </>
   );
 };
-
-export default Form;

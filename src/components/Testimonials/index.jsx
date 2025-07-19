@@ -1,10 +1,12 @@
 import { useRef } from "react";
+
 import { useScroll, useTransform, motion } from "framer-motion";
-import { cards } from "./data";
+
+import { testimonialsList } from "@constants";
 
 import styles from "./Testimonials.module.scss";
 
-const Testimonials = () => {
+export const Testimonials = () => {
   const targetRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: targetRef,
@@ -42,7 +44,7 @@ const Testimonials = () => {
               duration: 3,
             }}
           >
-            {cards.map(({ id, description, name, profession }) => (
+            {testimonialsList.map(({ id, description, name, profession }) => (
               <div className={styles.testimonialsCard} key={id}>
                 <p className={styles.testimonialsDescription}>{description}</p>
                 <div className={styles.testimonialsBottom}>
@@ -59,5 +61,3 @@ const Testimonials = () => {
     </section>
   );
 };
-
-export default Testimonials;

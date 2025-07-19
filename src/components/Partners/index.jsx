@@ -1,9 +1,10 @@
 import { motion } from "framer-motion";
-import { partnersList } from "./data";
+
+import { partnersList } from "@constants";
 
 import styles from "./Partners.module.scss";
 
-const Partners = () => {
+export const Partners = () => {
   const visible = {
     opacity: 1,
     y: 0,
@@ -41,5 +42,3 @@ const Partners = () => {
     </section>
   );
 };
-
-export default Partners;

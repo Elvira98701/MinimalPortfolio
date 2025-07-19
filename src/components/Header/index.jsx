@@ -1,10 +1,11 @@
 import { motion } from "framer-motion";
-import { navList } from "./data";
-
-import styles from "./Header.module.scss";
 import { Link, useLocation } from "react-router";
 
-const Header = () => {
+import { navList } from "@constants";
+
+import styles from "./Header.module.scss";
+
+export const Header = () => {
   const { pathname } = useLocation();
 
   return (
@@ -68,5 +69,3 @@ const Header = () => {
     </motion.header>
   );
 };
-
-export default Header;

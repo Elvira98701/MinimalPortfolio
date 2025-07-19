@@ -1,8 +1,3 @@
-import img1 from "@assets/images/projects/1.png";
-import img2 from "@assets/images/projects/2.png";
-import img3 from "@assets/images/projects/3.png";
-import img4 from "@assets/images/projects/4.png";
-
 import gsap from "@assets/icons/logos/gsap.svg";
 import logo from "@assets/icons/logos/logo.svg";
 import logo2 from "@assets/icons/logos/logo2.svg";
@@ -12,6 +7,10 @@ import react from "@assets/icons/logos/react.svg";
 import tailwind from "@assets/icons/logos/tailwind.svg";
 import threejs from "@assets/icons/logos/threejs.svg";
 import ts from "@assets/icons/logos/ts.svg";
+import img1 from "@assets/images/projects/1.avif";
+import img2 from "@assets/images/projects/2.avif";
+import img3 from "@assets/images/projects/3.avif";
+import img4 from "@assets/images/projects/4.avif";
 
 export const projectsList = [
   {

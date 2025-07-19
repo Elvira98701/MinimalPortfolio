@@ -1,11 +1,11 @@
+import { Button, Form } from "@components";
 import { useModal } from "@components/Modal/ModalContext";
-import Button from "@components/Button";
-import Form from "@components/Form";
 
 import styles from "./Contacts.module.scss";
 
-const Contacts = () => {
+export const Contacts = () => {
   const { openModal } = useModal();
+
   return (
     <section className={styles.contacts} id="contact">
       <div className={`${styles.contactsInner} container`}>
@@ -38,5 +38,3 @@ const Contacts = () => {
     </section>
   );
 };
-
-export default Contacts;

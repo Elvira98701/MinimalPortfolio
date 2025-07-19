@@ -1,130 +1,132 @@
 .banner {
-    background-image: url('@assets/images/spotlight-left.png'), url('@assets/images/grid-pattern.png'), url('@assets/images/spotlight-right.png');
-    background-repeat: no-repeat, no-repeat, no-repeat;
-    background-position:
-        top left,
-        top center,
-        top right;
-    position: relative;
+  background-image: url("@assets/images/spotlight-left.png"),
+    url("@assets/images/grid-pattern.png"),
+    url("@assets/images/spotlight-right.png");
+  background-repeat: no-repeat, no-repeat, no-repeat;
+  background-position: top left, top center, top right;
+  position: relative;
+
+  @media screen and (max-width: 768px) {
+    background-image: url("@assets/images/grid-pattern.png"),
+      url("@assets/images/spotlight-right.png");
+    background-repeat: no-repeat, no-repeat;
+    background-position: top center, top right;
+  }
+
+  &Inner {
+    min-height: 85vh;
+    @include flex-center;
+    text-align: center;
+  }
+
+  &Slogun {
+    color: #e4ecff;
+    text-transform: uppercase;
+    letter-spacing: 0.25em;
+    margin-bottom: 22px;
 
     @media screen and (max-width: 768px) {
-        background-image: url('@assets/images/grid-pattern.png'), url('@assets/images/spotlight-right.png');
-        background-repeat: no-repeat, no-repeat;
-        background-position:
-            top center,
-            top right;
+      font-size: 12px;
+    }
+  }
+
+  &Accent {
+    color: var(--color-accent);
+  }
+
+  &Description {
+    padding-block: 30px;
+    font-size: 24px;
+
+    @media screen and (max-width: 768px) {
+      font-size: 16px;
+    }
+  }
+
+  &Line {
+    width: 1px;
+    height: 130px;
+    position: absolute;
+    background-image: linear-gradient(
+      to bottom,
+      rgb(255 255 255 / 0),
+      rgb(142 132 217 / 0.3)
+    );
+
+    &-1 {
+      left: 200px;
+      top: 0px;
+      -webkit-animation: 8.7s line-animation infinite;
+      animation: 8.7s line-animation infinite;
+
+      @media screen and (max-width: 576px) {
+        left: 50px;
+      }
     }
 
-    &Inner {
-        min-height: 85vh;
-        @include flex-center;
-        text-align: center;
+    &-2 {
+      left: 655px;
+      top: 0px;
+      -webkit-animation: 6.7s line-animation infinite ease-in 1s;
+      animation: 6.7s line-animation infinite ease-in 1s;
+
+      @media screen and (max-width: 576px) {
+        left: 150px;
+      }
     }
 
-    &Slogun {
-        color: #E4ECFF;
-        text-transform: uppercase;
-        letter-spacing: 0.25em;
-        margin-bottom: 22px;
+    &-3 {
+      right: 435px;
+      top: 0px;
+      -webkit-animation: 6.7s line-animation infinite ease-in 1.5s;
+      animation: 6.7s line-animation infinite ease-in 1.5s;
 
-        @media screen and (max-width: 768px) {
-            font-size: 12px;
-        }
+      @media screen and (max-width: 576px) {
+        right: 100px;
+      }
     }
 
-    &Accent {
-        color: var(--color-accent);
+    &-4 {
+      right: 200px;
+      top: 0px;
+      -webkit-animation: 9s line-animation infinite;
+      animation: 9s line-animation infinite;
+
+      @media screen and (max-width: 576px) {
+        right: 30px;
+      }
     }
-
-    &Description {
-        padding-block: 30px;
-        font-size: 24px;
-
-        @media screen and (max-width: 768px) {
-            font-size: 16px;
-        }
-    }
-
-    &Line {
-        width: 1px;
-        height: 130px;
-        position: absolute;
-        background-image: linear-gradient(to bottom, rgb(255 255 255 / 0), rgb(142 132 217 / 0.3));
-
-        &-1 {
-            left: 200px;
-            top: 0px;
-            -webkit-animation: 8.7s line-animation infinite;
-            animation: 8.7s line-animation infinite;
-
-            @media screen and (max-width: 576px) {
-                left: 50px;
-            }
-        }
-
-        &-2 {
-            left: 655px;
-            top: 0px;
-            -webkit-animation: 6.7s line-animation infinite ease-in 1s;
-            animation: 6.7s line-animation infinite ease-in 1s;
-
-            @media screen and (max-width: 576px) {
-                left: 150px;
-            }
-        }
-
-        &-3 {
-            right: 435px;
-            top: 0px;
-            -webkit-animation: 6.7s line-animation infinite ease-in 1.5s;
-            animation: 6.7s line-animation infinite ease-in 1.5s;
-
-            @media screen and (max-width: 576px) {
-                right: 100px;
-            }
-        }
-
-        &-4 {
-            right: 200px;
-            top: 0px;
-            -webkit-animation: 9s line-animation infinite;
-            animation: 9s line-animation infinite;
-
-            @media screen and (max-width: 576px) {
-                right: 30px;
-            }
-        }
-    }
+  }
 }
 
 @-webkit-keyframes line-animation {
-    0% {
-        transform: translateY(0);
-        opacity: 0;
-    }
+  0% {
+    transform: translateY(0);
+    opacity: 0;
+  }
 
-    5% {
-        opacity: 1;
-    }
+  5% {
+    opacity: 1;
+  }
 
-    100% {
-        transform: translateY(80vh);
-        opacity: 0;
-    }
+  100% {
+    transform: translateY(80vh);
+    opacity: 0;
+  }
 }
 
 @keyframes line-animation {
-    0% {
-        transform: translateY(0);
-        opacity: 0;
-    }
+  0% {
+    transform: translateY(0);
+    opacity: 0;
+  }
 
-    5% {
-        opacity: 1;
-    }
+  5% {
+    opacity: 1;
+  }
 
-    100% {
-        transform: translateY(80vh);
-        opacity: 0;
-    }
+  100% {
+    transform: translateY(80vh);
+    opacity: 0;
+  }
 }

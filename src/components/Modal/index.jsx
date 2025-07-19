@@ -1,11 +1,13 @@
-import { motion } from "framer-motion";
 import { useEffect } from "react";
-import { useModal } from "./ModalContext";
-import Button from "@components/Button";
+
+import { motion } from "framer-motion";
+
+import { Button } from "@components";
 
 import styles from "./Modal.module.scss";
+import { useModal } from "./ModalContext";
 
-const Modal = () => {
+export const Modal = () => {
   const { isOpen, closeModal, content } = useModal();
 
   useEffect(() => {
@@ -60,5 +62,3 @@ const Modal = () => {
     </motion.div>
   );
 };
-
-export default Modal;

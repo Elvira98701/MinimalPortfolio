@@ -1,12 +1,13 @@
-import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useState } from "react";
-import Button from "@components/Button";
-import Globe from "@components/Globe";
-import { aboutList } from "./data";
+
+import { AnimatePresence, motion } from "framer-motion";
+
+import { Globe, Button } from "@components";
+import { aboutList } from "@constants";
 
 import styles from "./About.module.scss";
 
-const About = () => {
+export const About = () => {
   const [isOpenNotification, setIsOpenNotification] = useState(false);
 
   const handleCopyToClipboard = async (text) => {
@@ -112,5 +113,3 @@ const About = () => {
     </section>
   );
 };
-
-export default About;

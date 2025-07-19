@@ -1,10 +1,12 @@
-import { motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
-import { experinceList } from "./data";
+
+import { motion } from "framer-motion";
+
+import { experinceList } from "@constants";
 
 import styles from "./Experince.module.scss";
 
-const Experince = () => {
+export const Experince = () => {
   const [offsetWidth, setOffsetWidth] = useState(0);
   const [offsetHeight, setOffsetHeight] = useState(0);
   const containerRef = useRef(null);
@@ -90,5 +92,3 @@ const Experince = () => {
     </section>
   );
 };
-
-export default Experince;

@@ -1,11 +1,11 @@
 import { motion } from "framer-motion";
-import Button from "@components/Button";
+
+import { Button, Form } from "@components";
 import { useModal } from "@components/Modal/ModalContext";
 
 import styles from "./Banner.module.scss";
-import Form from "@components/Form";
 
-const Banner = () => {
+export const Banner = () => {
   const { openModal } = useModal();
 
   return (
@@ -59,5 +59,3 @@ const Banner = () => {
     </section>
   );
 };
-
-export default Banner;

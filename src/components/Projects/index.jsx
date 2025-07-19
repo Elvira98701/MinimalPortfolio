@@ -1,10 +1,11 @@
 import { motion } from "framer-motion";
-import ProjectCard from "@components/ProjectCard";
-import { projectsList } from "./data";
+
+import { ProjectCard } from "@components";
+import { projectsList } from "@constants";
 
 import styles from "./Projects.module.scss";
 
-const Projects = () => {
+export const Projects = () => {
   return (
     <section className={styles.projects} id="projects">
       <motion.div className="container">
@@ -44,5 +45,3 @@ const Projects = () => {
     </section>
   );
 };
-
-export default Projects;

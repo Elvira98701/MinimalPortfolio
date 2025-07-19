@@ -1,9 +1,10 @@
 import { motion } from "framer-motion";
-import { approachList } from "./data";
+
+import { approachList } from "@constants";
 
 import styles from "./Approach.module.scss";
 
-const Approach = () => {
+export const Approach = () => {
   const visible = {
     opacity: 1,
     y: 0,
@@ -146,5 +147,3 @@ const Approach = () => {
     </section>
   );
 };
-
-export default Approach;

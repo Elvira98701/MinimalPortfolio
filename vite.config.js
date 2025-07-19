@@ -1,6 +1,6 @@
-import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import sass from "sass";
+import { defineConfig } from "vite";
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -18,11 +18,12 @@ export default defineConfig({
   },
   resolve: {
     alias: {
-      "@components": "/src/components",
-      "@styles": "/src/styles",
       "@assets": "/src/assets",
+      "@components": "/src/components",
+      "@constants": "/src/constants",
       "@hooks": "/src/hooks",
       "@pages": "/src/pages",
+      "@styles": "/src/styles",
       "@utils": "/src/utils",
     },
   },

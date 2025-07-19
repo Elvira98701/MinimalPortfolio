@@ -1,6 +1,6 @@
 import styles from "./Preloader.module.scss";
 
-const Preloader = ({ isLoading }) => {
+export const Preloader = ({ isLoading }) => {
   return (
     <div
       className={`${styles.preloader} ${!isLoading && styles.preloaderHide}`}
@@ -9,5 +9,3 @@ const Preloader = ({ isLoading }) => {
     </div>
   );
 };
-
-export default Preloader;

@@ -1,11 +1,12 @@
 import { motion } from "framer-motion";
 import { useParams } from "react-router";
-import { projectsList } from "@components/Projects/data";
+
+import { Approach } from "@components";
+import { projectsList } from "@constants";
 
 import styles from "./Project.module.scss";
-import Approach from "@components/Approach";
 
-const Project = () => {
+export const Project = () => {
   const { id } = useParams();
   const project = projectsList.find((project) => project.id === Number(id));
 
@@ -81,5 +82,3 @@ const Project = () => {
     </main>
   );
 };
-
-export default Project;

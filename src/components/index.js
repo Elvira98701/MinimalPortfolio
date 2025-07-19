@@ -1,0 +1,16 @@
+export { About } from "./About";
+export { Approach } from "./Approach";
+export { Banner } from "./Banner";
+export { Button } from "./Button";
+export { Contacts } from "./Contacts";
+export { Experince } from "./Experince";
+export { Footer } from "./Footer";
+export { Form } from "./Form";
+export { Globe } from "./Globe";
+export { Header } from "./Header";
+export { Modal } from "./Modal";
+export { Partners } from "./Partners";
+export { Preloader } from "./Preloader";
+export { ProjectCard } from "./ProjectCard";
+export { Projects } from "./Projects";
+export { Testimonials } from "./Testimonials";

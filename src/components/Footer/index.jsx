@@ -1,8 +1,8 @@
-import { socialsList } from "./data";
+import { socialsList } from "@constants";
 
 import styles from "./Footer.module.scss";
 
-const Footer = () => {
+export const Footer = () => {
   return (
     <footer className={styles.footer}>
       <div className={`${styles.footerInner} container`}>
@@ -27,5 +27,3 @@ const Footer = () => {
     </footer>
   );
 };
-
-export default Footer;

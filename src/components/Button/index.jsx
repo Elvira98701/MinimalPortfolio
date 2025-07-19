@@ -1,6 +1,11 @@
 import styles from "./Button.module.scss";
 
-const Button = ({ children, onClick, small = false, square = false }) => {
+export const Button = ({
+  children,
+  onClick,
+  small = false,
+  square = false,
+}) => {
   return (
     <button
       className={`${styles.button} ${small ? styles.buttonSmall : ""} ${
@@ -13,5 +18,3 @@ const Button = ({ children, onClick, small = false, square = false }) => {
     </button>
   );
 };
-
-export default Button;
