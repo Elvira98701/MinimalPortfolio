@@ -14,22 +14,7 @@ export const Project = () => {
     <main>
       <section className={styles.project}>
         <div className={`${styles.projectInner} container`}>
-          <motion.h1
-            className={styles.projectTitle}
-            initial={{ scale: 0, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            transition={{
-              type: "spring",
-              bounce: 0.2,
-              duration: 1.2,
-              damping: 6,
-              stiffness: 50,
-              restDelta: 0.001,
-              delay: 0.5,
-            }}
-          >
-            {project.title}
-          </motion.h1>
+          <h1 className={styles.projectTitle}>{project.title}</h1>
           <motion.p
             initial={{ y: 100, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}

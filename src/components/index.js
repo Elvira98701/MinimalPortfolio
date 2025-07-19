@@ -14,3 +14,4 @@ export { Preloader } from "./Preloader";
 export { ProjectCard } from "./ProjectCard";
 export { Projects } from "./Projects";
 export { Testimonials } from "./Testimonials";
+export * from "./Icons";

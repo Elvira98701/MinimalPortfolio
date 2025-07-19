@@ -5,6 +5,7 @@ export const Button = ({
   onClick,
   small = false,
   square = false,
+  ...props
 }) => {
   return (
     <button
@@ -13,6 +14,7 @@ export const Button = ({
       }`}
       type="button"
       onClick={onClick}
+      {...props}
     >
       {children}
     </button>

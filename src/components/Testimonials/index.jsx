@@ -17,23 +17,10 @@ export const Testimonials = () => {
   return (
     <section className={styles.testimonials} id="testimonials">
       <div className="container">
-        <motion.h2
-          className={styles.testimonialsTitle}
-          initial={{ scale: 0, opacity: 0 }}
-          whileInView={{ scale: 1, opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{
-            type: "spring",
-            bounce: 0.2,
-            duration: 1.2,
-            damping: 6,
-            stiffness: 50,
-            restDelta: 0.001,
-          }}
-        >
+        <h2 className={styles.testimonialsTitle}>
           Kind words from{" "}
           <span className={styles.testimonialsAccent}>satisfied clients</span>
-        </motion.h2>
+        </h2>
       </div>
       <div className={styles.testimonialsContent} ref={targetRef}>
         <div className={styles.testimonialsBody}>

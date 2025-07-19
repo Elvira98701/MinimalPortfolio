@@ -5,7 +5,7 @@ export const Preloader = ({ isLoading }) => {
     <div
       className={`${styles.preloader} ${!isLoading && styles.preloaderHide}`}
     >
-      <div className={styles.preloaderSpinner}></div>
+      <div className={styles.preloaderSpinner} />
     </div>
   );
 };
