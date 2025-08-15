@@ -1,35 +1,35 @@
 .preloader {
-    position: fixed;
-    inset: 0;
-    z-index: 101;
-    background-color: var(--color-dark);
-    @include flex-center;
-    transition: all 0.3s;
+  position: fixed;
+  inset: 0;
+  z-index: 101;
+  background-color: var(--color-dark);
+  @include flex-center;
+  transition: all 0.5s;
 
-    &Spinner {
-        width: 50px;
-        height: 50px;
-        border-radius: 50%;
-        border: 8px solid;
-        border-color: var(--color-accent) var(--color-dark);
-        -webkit-animation: s1 1s infinite;
-        animation: s1 1s infinite;
-    }
+  &Spinner {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 8px solid;
+    border-color: var(--color-accent) var(--color-dark);
+    -webkit-animation: s1 1s infinite;
+    animation: s1 1s infinite;
+  }
 
-    &Hide {
-        transform: translateY(-100%);
-        pointer-events: none;
-    }
+  &Hide {
+    transform: translateY(-100%);
+    pointer-events: none;
+  }
 }
 
 @-webkit-keyframes s1 {
-    to {
-        transform: rotate(.5turn)
-    }
+  to {
+    transform: rotate(0.5turn);
+  }
 }
 
 @keyframes s1 {
-    to {
-        transform: rotate(.5turn)
-    }
+  to {
+    transform: rotate(0.5turn);
+  }
 }

@@ -10,7 +10,7 @@ import {
 
 export const Home = () => {
   return (
-    <>
+    <main>
       <Banner />
       <About />
       <Projects />
@@ -18,6 +18,6 @@ export const Home = () => {
       <Partners />
       <Experince />
       <Approach />
-    </>
+    </main>
   );
 };
