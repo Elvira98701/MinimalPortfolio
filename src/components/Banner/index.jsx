@@ -1,5 +1,4 @@
-import { Button, Form } from "@components";
-import { IconArroy } from "@components/Icons";
+import { Button, Form, IconArroy } from "@components";
 import { useModal } from "@components/Modal/ModalContext";
 
 import styles from "./Banner.module.scss";
